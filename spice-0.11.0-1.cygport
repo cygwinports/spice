@@ -1,0 +1,23 @@
+DESCRIPTION="Virtual machine remote access library"
+HOMEPAGE="http://spice-space.org/"
+SRC_URI="http://spice-space.org/download/releases/${P}.tar.bz2"
+PATCH_URI="0.11.0-cygwin.patch"
+
+DEPEND="autoconf automake libtool pkgconfig
+	libjpeg-devel
+	libsasl2-devel
+	pkgconfig(celt051)
+	pkgconfig(openssl)
+	pkgconfig(pixman-1)
+	pkgconfig(spice-protocol)
+	pkgconfig(zlib)
+	python(pyparsing)"
+
+PKG_NAMES="libspice-server1 libspice-server-devel"
+libspice_server1_CONTENTS="usr/bin/cygspice-server-1.dll usr/share/doc/"
+libspice_server_devel_CONTENTS="usr/include/ usr/lib/"
+
+# x11 client requires ALSA
+CYGCONF_ARGS="--disable-client"
+
+KEEP_LA_FILES="none"
