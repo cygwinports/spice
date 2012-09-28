@@ -1,8 +1,0 @@
-category: System
-requires: libspice-server1 libcelt051-devel libpixman1-devel openssl-devel libXinerama-devel spice-protocol
-external-source: spice
-sdesc: "Virtual machine remote access library (development)"
-ldesc: "The Spice project aims to provide a complete open source 
-solution for interaction with virtualized desktop devices. Currently, 
-the project main focus is to provide high-quality remote access to QEMU 
-virtual machine."

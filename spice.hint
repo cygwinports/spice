@@ -1,6 +1,0 @@
-category: System
-sdesc: "Virtual machine remote access library (sources)"
-ldesc: "The Spice project aims to provide a complete open source 
-solution for interaction with virtualized desktop devices. Currently, 
-the project main focus is to provide high-quality remote access to QEMU 
-virtual machine."

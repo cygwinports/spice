@@ -1,8 +1,0 @@
-category: System
-requires: libcelt051_0 libgcc1 libjpeg8 libpixman1_0 libsasl2 libopenssl100 zlib0
-external-source: spice
-sdesc: "Virtual machine remote access library (runtime)"
-ldesc: "The Spice project aims to provide a complete open source 
-solution for interaction with virtualized desktop devices. Currently, 
-the project main focus is to provide high-quality remote access to QEMU 
-virtual machine."
