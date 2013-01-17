@@ -1,5 +1,5 @@
 NAME="spice"
-VERSION=0.12.0
+VERSION=0.12.2
 RELEASE=1
 CATEGORY="System"
 SUMMARY="SPICE Virtual machine remote access library"
