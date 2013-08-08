@@ -1,14 +1,17 @@
 NAME="spice"
-VERSION=0.12.2
+VERSION=0.12.4
 RELEASE=1
-CATEGORY="System"
+CATEGORY="Libs"
 SUMMARY="SPICE Virtual machine remote access library"
 DESCRIPTION="The Spice project aims to provide a complete open source solution
 for interaction with virtualized desktop devices. Currently, the project main
 focus is to provide high-quality remote access to QEMU virtual machine."
 HOMEPAGE="http://spice-space.org/"
-SRC_URI="http://spice-space.org/download/releases/${P}.tar.bz2"
-PATCH_URI="0.11.0-cygwin.patch"
+SRC_URI="http://spice-space.org/download/releases/spice-${VERSION}.tar.bz2"
+PATCH_URI="
+	0.11.0-cygwin.patch
+	0.12.4-ioctl-TIOCOUTQ.patch
+"
 
 DEPEND="autoconf automake libtool pkgconfig
 	libjpeg-devel

@@ -1,0 +1,24 @@
+See http://lists.freedesktop.org/archives/spice-devel/2013-July/013967.html
+
+--- origsrc/spice-0.12.4/server/red_channel.c	2013-07-17 09:00:27.000000000 -0500
++++ src/spice-0.12.4/server/red_channel.c	2013-08-08 18:42:25.965458300 -0500
+@@ -722,6 +722,7 @@ static void red_channel_client_ping_time
+ 
+     spice_assert(rcc->latency_monitor.state == PING_STATE_TIMER);
+     red_channel_client_cancel_ping_timer(rcc);
++#ifdef TIOCOUTQ
+     /* retrieving the occupied size of the socket's tcp snd buffer (unacked + unsent) */
+     if (ioctl(rcc->stream->socket, TIOCOUTQ, &so_unsent_size) == -1) {
+         spice_printerr("ioctl(TIOCOUTQ) failed, %s", strerror(errno));
+@@ -729,9 +730,9 @@ static void red_channel_client_ping_time
+     if (so_unsent_size > 0) {
+         /* tcp snd buffer is still occupied. rescheduling ping */
+         red_channel_client_start_ping_timer(rcc, PING_TEST_IDLE_NET_TIMEOUT_MS);
+-    } else {
++    } else
++#endif
+         red_channel_client_push_ping(rcc);
+-    }
+ }
+ 
+ RedChannelClient *red_channel_client_create(int size, RedChannel *channel, RedClient  *client,
