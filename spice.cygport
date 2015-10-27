@@ -1,5 +1,5 @@
 NAME="spice"
-VERSION=0.12.4
+VERSION=0.12.6
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="SPICE Virtual machine remote access library"
@@ -8,10 +8,6 @@ for interaction with virtualized desktop devices. Currently, the project main
 focus is to provide high-quality remote access to QEMU virtual machine."
 HOMEPAGE="http://spice-space.org/"
 SRC_URI="http://spice-space.org/download/releases/spice-${VERSION}.tar.bz2"
-PATCH_URI="
-	0.11.0-cygwin.patch
-	0.12.4-ioctl-TIOCOUTQ.patch
-"
 
 DEPEND="autoconf automake libtool pkgconfig
 	libjpeg-devel
@@ -27,7 +23,6 @@ PKG_NAMES="libspice-server1 libspice-server-devel"
 libspice_server1_CONTENTS="usr/bin/cygspice-server-1.dll usr/share/doc/"
 libspice_server_devel_CONTENTS="usr/include/ usr/lib/"
 
-# x11 client requires ALSA
-CYGCONF_ARGS="--disable-client --disable-smartcard"
+CYGCONF_ARGS="--disable-smartcard"
 
 KEEP_LA_FILES="none"
