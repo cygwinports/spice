@@ -1,0 +1,18 @@
+--- origsrc/spice-0.12.8/server/reds.c	2016-07-13 06:56:56.000000000 -0500
++++ src/spice-0.12.8/server/reds.c	2016-09-26 21:55:12.504031100 -0500
+@@ -2263,6 +2263,7 @@ static bool reds_init_keepalive(int sock
+         }
+     }
+ 
++#ifdef TCP_KEEPIDLE
+     if (setsockopt(socket, SOL_TCP, TCP_KEEPIDLE,
+                    &keepalive_timeout, sizeof(keepalive_timeout)) == -1) {
+         if (errno != ENOTSUP) {
+@@ -2270,6 +2271,7 @@ static bool reds_init_keepalive(int sock
+             return false;
+         }
+     }
++#endif
+ 
+     return true;
+ }
