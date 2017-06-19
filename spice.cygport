@@ -1,5 +1,5 @@
 NAME="spice"
-VERSION=0.12.8
+VERSION=0.13.3
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="SPICE Virtual machine remote access library"
@@ -25,5 +25,6 @@ libspice_server1_CONTENTS="usr/bin/cygspice-server-1.dll usr/share/doc/"
 libspice_server_devel_CONTENTS="usr/include/ usr/lib/"
 
 CYGCONF_ARGS="--enable-lz4 --disable-smartcard"
+MAKEOPTS+=" noinst_PROGRAMS= "
 
 KEEP_LA_FILES="none"
